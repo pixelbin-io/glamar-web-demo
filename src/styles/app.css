@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: white;
+}
+
+/* SDK Container - Following documentation example */
+#container__frame_wrapper {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  z-index: 1;
+  background: #ffffff;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+/* Access Token Popup */
+.access-token-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  backdrop-filter: blur(5px);
+}
+
+.access-token-modal {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+  position: relative;
+  text-align: center;
+}
+
+.access-token-modal h2 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.access-token-modal p {
+  margin-bottom: 25px;
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.access-token-modal input {
+  width: 100%;
+  padding: 15px;
+  margin: 15px 0;
+  border: 2px solid #e1e8ed;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: monospace;
+  transition: border-color 0.3s ease;
+}
+
+.access-token-modal input:focus {
+  outline: none;
+  border-color: #da0d64;
+  box-shadow: 0 0 0 3px rgba(218, 13, 100, 0.1);
+}
+
+.access-token-modal button {
+  width: 100%;
+  background: #da0d64;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.access-token-modal button:hover:not(:disabled) {
+  background: #b8095a;
+  transform: translateY(-1px);
+}
+
+.access-token-modal button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.access-token-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #da0d64;
+}
+
+#CTA {
+  overflow: hidden;
+  display: flex;
+  width: 200px;
+  margin: 1px;
+  background: #da0d64;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-root {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  min-width: 320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  background: var(--layout-background-color);
+  z-index: 3500;
+}
+
+.cta-tabs {
+  display: flex;
+  align-items: center;
+}
