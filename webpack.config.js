@@ -1,35 +1,22 @@
-// webpack.config.js
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const fs = require("fs");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.jsx",
+
+  // No JS entry points – we’re not bundling any JS
+  entry: {},
+
   output: {
-    filename: "bundle.js",
+    // just produce a clean dist folder; no JS filename needed
     path: path.resolve(__dirname, "dist"),
     clean: true,
-    publicPath: "/",
   },
-  resolve: {
-    extensions: [".js", ".jsx"],
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: "babel-loader",
-      },
-      {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
-      },
-    ],
-  },
+
+  // Serve your files over HTTPS with your cert
   devServer: {
-    static: path.join(__dirname, "public"),
+    static: { directory: __dirname }, // serve your project root (index.html)
     host: "local.pixelbinz0.de",
     port: 9090,
     allowedHosts: "all",
@@ -46,13 +33,17 @@ module.exports = {
         cert: fs.readFileSync(path.resolve(__dirname, "ssl/cert.pem")),
       },
     },
-    hot: true,
     open: true,
     historyApiFallback: true,
+    hot: false, // no HMR needed since we’re not bundling
   },
+
+  // Emit index.html into dist on build (unchanged, no scripts injected)
   plugins: [
     new HtmlWebpackPlugin({
-      template: "index.html",
+      template: "./index.html",
+      inject: false, // don't inject any <script> tags (we have none)
+      minify: false,
     }),
   ],
 };

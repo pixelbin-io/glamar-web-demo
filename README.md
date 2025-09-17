@@ -75,20 +75,6 @@ npm start
 ```
 Root
 ├── index.html                             # HTML template used by HtmlWebpackPlugin
-│
-├── ssl/
-│   ├── key.pem                            # Local dev SSL key
-│   └── cert.pem                           # Local dev SSL certificate
-│
-├── src/
-│   ├── index.jsx                          # Entry point, renders <App />
-│   ├── App.jsx                            # Root component handling access token flow
-│   ├── GlamARDemo.jsx                     # Component that initializes GlamAR SDK and buttons
-│   ├── styles/
-│   │   └── app.css                        # All global CSS styles
-│
-├── .babelrc                               # Babel config (if using JSON format)
-├── babel.config.js                        # Babel config (if using JS format)
 ├── webpack.config.js                      # Webpack config with SSL and dev server
 ├── package.json                           # Project dependencies and scripts
 ├── README.md                              # Setup instructions, SDK integration guide
