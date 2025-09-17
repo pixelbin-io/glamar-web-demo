@@ -17,7 +17,7 @@ module.exports = {
   // Serve your files over HTTPS with your cert
   devServer: {
     static: { directory: __dirname }, // serve your project root (index.html)
-    host: "local.pixelbinz0.de",
+    host: "local.sdk.glamar.io",
     port: 9090,
     allowedHosts: "all",
     headers: {
