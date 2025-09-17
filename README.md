@@ -50,7 +50,7 @@ Insert the following lines:
 
 6. Login to https://console.pixelbin.io/
 
-7. Goto GlamAR > SDK Config > Allowed Domains and add local.sdk.glamar.io
+7. Goto GlamAR > SDK Config > Allowed Domains and add https://local.sdk.glamar.io
 
 To run the GlamAR React Demo locally, follow the steps below:
 
