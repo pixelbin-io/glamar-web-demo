@@ -19,7 +19,7 @@ You can install **npm** with Node.js. If you don't have it installed yet, you ca
 2. Use mkcert to generate a locally-trusted development certificate. Run the following command:
 
    ```bash
-   mkcert -key-file key.pem -cert-file cert.pem “erasez0.de”
+   mkcert -key-file key.pem -cert-file cert.pem “glamar.io”
    ```
 
 3. Create a folder named **ssl** at the root level of the repository.
